@@ -106,4 +106,15 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
+	public function actionPanel()
+	{
+		if(Yii::app()->user->isQuest)
+		{
+			$redirect (Yii::app()->homeUrl);
+		}
+		else
+		{
+			$this->render('panel');
+		}
+	}
 }
